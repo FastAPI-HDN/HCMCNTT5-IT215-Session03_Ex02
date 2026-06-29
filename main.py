@@ -44,15 +44,8 @@ def check_health():
 
 @app.get ("/books")
 def get_available_books():
-    result_books = []
-    
-    for book in books:
-        if book["is_available"] == True:
-            result_books.append(book)
-            
-    return result_books
+    return [book for book in books if book["is_available"]== True]
 
 @app.get ("/books/borrowed")
 def get_borrowed_books ():
-    result_books = [book for book in books if book ["is_available"] == False]
-    return result_books
+    return [book for book in books if book ["is_available"] == False]
