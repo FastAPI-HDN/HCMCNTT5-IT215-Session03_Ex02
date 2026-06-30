@@ -42,7 +42,7 @@ def check_health():
     return {"message": "Library API is running"}
 
 
-@app.get ("/books")
+@app.get ("/books/available")
 def get_available_books():
     result_books = []
     
